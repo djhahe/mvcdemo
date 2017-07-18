@@ -1,0 +1,220 @@
+/********************************************************/
+/*				          Reset                         */
+/********************************************************/
+body {
+  background-color: #a5937b;
+  color: #fff;
+  font-family: Arial, Tahoma;
+  font-size: 18px;
+  margin: 0; }
+
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit; }
+
+/********************************************************/
+/*				          Page                          */
+/********************************************************/
+/* Extra small devices (phones, less than 768px) */
+.header {
+  position: relative;
+  height: 40em;
+  text-align: center; }
+  .header .header__image {
+    width: 50%;
+    height: 20em;
+    transform: scale(3, 3);
+    background: url(../styles/img/banner.jpg) 44% 98px/cover no-repeat; }
+  .header .header__quote {
+    top: 4em;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    height: 20em;
+    line-height: 1.5;
+    font-weight: bold;
+    background: #efc889;
+    margin: 0px 60px;
+    border: solid 10px;
+    padding: 50px 9px; }
+  .header .header__author {
+    top: 22em;
+    top: 22em;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url(../styles/img/photo.png) 0% 0%/60px 60px no-repeat;
+    margin: 0px auto; }
+  .header .header__authordetails {
+    top: 28em;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    line-height: 0.5;
+    text-align: center;
+    margin: 0px auto; }
+  .header .header__contact {
+    top: 34em;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    width: 245px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px auto;
+    border-style: solid;
+    border-radius: 3px;
+    background: #efc889; }
+    .header .header__contact .header__contact__image {
+      width: 25px;
+      height: 22px;
+      display: inline-block;
+      width: 25px;
+      height: 22px;
+      background: url(../styles/img/sprites.png) 4px 4px no-repeat; }
+
+.content {
+  text-align: center;
+  margin: 50px 20px 20px; }
+  .content .content__title {
+    font-size: 2.5em;
+    padding-bottom: 20px;
+    border-bottom: 1px solid; }
+  .content .content__contact {
+    border-bottom: 1px solid; }
+    .content .content__contact div {
+      margin-bottom: 30px; }
+      .content .content__contact div p {
+        font-size: 0.9em; }
+        .content .content__contact div p strong {
+          font-size: 1.2em; }
+  .content .content__form {
+    text-align: left; }
+    .content .content__form p {
+      font-size: 0.9em;
+      margin: 20px 0px 5px; }
+    .content .content__form input, .content .content__form textarea {
+      border-radius: 3px;
+      border: 0px;
+      width: 100%; }
+    .content .content__form input {
+      height: 40px; }
+    .content .content__form textarea {
+      height: 150px; }
+
+footer {
+  text-align: center;
+  margin: 0px 20px 20px; }
+  footer .footer__send {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: solid 2px;
+    border-radius: 3px; }
+    footer .footer__send .footer__send__image {
+      width: 30px;
+      height: 22px;
+      display: inline-block;
+      background: url(../styles/img/sprites.png) -26px center no-repeat; }
+    footer .footer__send a {
+      font-size: 1em; }
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 35em; }
+    .header .header__image {
+      height: 14em;
+      transform: scale(4, 4);
+      width: 40%;
+      background-position: 2em 3em; }
+    .header .header__quote {
+      height: 12em; }
+    .header .header__author {
+      width: 90px;
+      height: 90px;
+      background-size: 90px 90px;
+      top: 13em; }
+    .header .header__authordetails {
+      top: 21em; }
+    .header .header__contact {
+      top: 27em; }
+  .content .content__title {
+    padding-bottom: 50px; }
+  .content .content__contact div {
+    margin: 0px 0px 50px; }
+  .content .content__form {
+    margin-top: 40px; }
+    .content .content__form input {
+      margin-bottom: 20px; } }
+
+/* Medium devices (desktops, 992px and up) */
+@media only all and (min-width: 992px) {
+  .header {
+    height: 648px; }
+    .header .header__image {
+      width: 100%;
+      height: 648px;
+      transform: none;
+      background-position: 0px center; }
+    .header .header__quote {
+      width: 704px;
+      font-size: 19px;
+      margin: 0px auto;
+      padding: 36px 62px; }
+    .header .header__author {
+      top: 13em; }
+    .header .header__authordetails {
+      font-size: 17px; }
+    .header .header__contact {
+      top: 27em; }
+  .content {
+    width: 880px;
+    margin: 0px auto; }
+    .content .content__title {
+      padding-bottom: 34px; }
+    .content .content__contact div p {
+      font-size: 17px; }
+      .content .content__contact div p strong {
+        font-size: 19px; }
+    .content .content__contact .content__contact__phone {
+      float: left;
+      width: 33%; }
+    .content .content__contact .content__contact__note {
+      display: inline-block;
+      width: 33%; }
+    .content .content__contact .content__contact__email {
+      float: right;
+      width: 33%; }
+    .content .content__form div p {
+      font-size: 17px; }
+    .content .content__form div input {
+      width: 264px; }
+    .content .content__form .content__form__name {
+      float: left;
+      width: 33%; }
+    .content .content__form .content__form__email {
+      display: inline-block;
+      width: 33%; }
+    .content .content__form .content__form__phone {
+      float: right;
+      width: 33%; }
+    .content .content__form .content__form__message textarea {
+      height: 304px; }
+  footer {
+    width: 880px;
+    margin: 27px auto; }
+    footer .footer__send {
+      width: 250px;
+      height: 63px;
+      line-height: 63px;
+      margin: inherit; } }
+
+/*# sourceMappingURL=../app.map*/

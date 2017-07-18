@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    -webkit-box-shadow: -6px -6px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    -6px -6px 5px rgba(50, 50, 50, 0.75);
+    box-shadow:         -6px -6px 5px rgba(50, 50, 50, 0.75);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(238, 239, 243)
+}
+
+.leftContent{
+    display:block;
+    width:25%;
+}
+
+.rightContent{
+    display:block;
+    width: 75%;
+}
+
+
+

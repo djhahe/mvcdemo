@@ -1,0 +1,9 @@
+@mixin float--left($width){
+    float: left;
+    width: $width;
+}
+
+@mixin float--right($width){
+    float: right;
+    width: $width;
+}

@@ -1,0 +1,23 @@
+
+    .header{ 
+        background-color: rgb(76,99,117);
+        top: 0;
+        color: white;
+        height: 50px;
+        position: relative;
+        line-height: 50px;
+        .pagaName{
+            position: absolute;
+            margin-left: 20px
+        }
+
+        .language{
+            position: absolute;
+            right: 100px;
+        }
+
+        .loginInfo{
+            position: absolute;
+            right: 10px
+        }
+    }

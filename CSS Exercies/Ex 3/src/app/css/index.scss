@@ -1,0 +1,314 @@
+@import "variables";
+@import "mixin.scss";
+
+/********************************************************/
+/*				          Reset                         */
+/********************************************************/
+
+body {
+    background-color: $body-bg;
+    color: $text-color;
+    font: {
+        family: $font-family;
+        size: 18px;
+    }
+    margin: 0;
+}
+
+*, ::before, ::after {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    font: {
+        family: inherit;
+        size: inherit;
+    }    
+}
+
+/********************************************************/
+/*				          Page                          */
+/********************************************************/
+
+/* Extra small devices (phones, less than 768px) */
+.header {
+    position: relative;
+    height: 40em;
+    text-align: center;
+
+    .header__image {
+        @include size(50%, 20em);
+        transform: scale(3, 3);
+        background: url("img/banner.jpg") 44% (98px / cover) no-repeat;
+    }
+
+    .header__quote {
+        @include absolute(top 4em right 0px left 0px);
+        height: 20em;
+        line-height: 1.5;
+        font-weight: bold;
+        background: $btn-bg;
+        margin: 0px 60px;
+        border: solid 10px;
+        padding: 50px 9px;
+    }
+
+    .header__author {
+        top: 22em;
+        @include absolute(top 22em left 0px right 0px);
+        @include size(60px,60px);
+        background: url("img/photo.png") 0% 0% / 60px 60px no-repeat;
+        margin: 0px auto;
+    }
+
+    .header__authordetails {
+        @include absolute(top 28em left 0px right 0px);
+        line-height: 0.5;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+    .header__contact {
+        @include absolute(top 34em left 0px right 0px);
+        @include size(245px, 50px);
+        line-height: 50px;
+        margin: 0px auto;
+        border-style: solid;
+        border-radius: $border-normal-radius;
+        background: $btn-bg;
+
+        .header__contact__image {
+            @include size(25px, 22px);
+            display: inline-block;
+            width: 25px;
+            height: 22px;
+            background: url("img/sprites.png") 4px 4px no-repeat;
+        }
+    }
+}
+
+
+.content {
+    text-align: center;
+    margin: 50px 20px 20px;
+
+    .content__title {
+        font-size: 2.5em;
+        padding-bottom: 20px;
+        border-bottom: 1px solid;
+    }
+
+    .content__contact {
+    border-bottom: 1px solid;
+    div {
+        margin-bottom: 30px;
+
+        p {
+            font-size: 0.9em;
+
+            strong {
+                font-size: 1.2em;
+            }
+        }
+    }
+    }
+
+    .content__form {
+        text-align: left;
+        p {
+            font-size: 0.9em;
+            margin: 20px 0px 5px;
+        }
+
+        %inputtext {
+            border-radius: 3px;
+            border: 0px;
+            width: 100%;
+        }
+        input {
+            @extend %inputtext;
+            height: 40px;
+        }
+        textarea{
+            @extend %inputtext;
+            height: 150px;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    margin: 0px 20px 20px;
+
+    .footer__send {
+        @include size(100%,50px);
+        line-height: 50px;
+        border: solid 2px;
+        border-radius: $border-normal-radius;
+
+        .footer__send__image {
+            @include size(30px,22px);
+            display: inline-block;
+            background: url("img/sprites.png") -26px center no-repeat;
+        }
+
+        a {
+            font-size: 1em;
+        }
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 35em;
+
+    .header__image {
+      height: 14em;
+      transform: scale(4, 4);
+      width: 40%;
+      background-position: 2em 3em;
+    }
+
+    .header__quote {
+      height: 12em;
+    }
+
+    .header__author {
+      @include size(90px,90px);
+      background-size: 90px 90px;
+      top: 13em;
+    }
+
+    .header__authordetails {
+      top: 21em;
+    }
+
+    .header__contact {
+      top: 27em;
+    }
+  }
+
+  .content {
+    .content__title {
+      padding-bottom: 50px;
+    }
+
+    .content__contact div {
+      margin: 0px 0px 50px;
+    }
+
+    .content__form {
+      margin-top: 40px;
+
+      input {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media only all and (min-width: 992px) {
+  .header {
+      height: 648px;
+      .header__image {
+          @include size(100%, 648px);
+          transform: none;
+          background-position: 0px center;
+      }
+
+      .header__quote {
+          width: 704px;
+          font-size: 19px;
+          margin: 0px auto;
+          padding: 36px 62px;
+      }
+
+      .header__author {
+          top: 13em;
+      }
+
+      .header__authordetails {
+          font-size: 17px;
+      }
+
+      .header__contact {
+          top: 27em;
+      }
+
+  }
+
+  .content {
+      width: 880px;
+      margin: 0px auto;
+
+      .content__title {
+          padding-bottom: 34px;
+      }
+
+      .content__contact {
+
+          div p {
+            font-size: 17px;
+
+            strong {
+              font-size: 19px;
+            }
+          }
+
+          .content__contact__phone{
+              @include column--left(33%);
+          }
+
+          .content__contact__note {
+              @include column--center(33%);
+          }
+
+          .content__contact__email {
+              @include column--right(33%);
+          }
+      }
+
+      .content__form {
+          div {
+            p {
+                font-size: 17px;
+            }
+            input {
+                width: 264px;
+            }
+          }
+
+          .content__form__name {
+              @include column--left(33%);
+          }
+          
+          .content__form__email {
+              @include column--center(33%);
+          }
+
+          .content__form__phone {
+              @include column--right(33%);
+          }
+
+          .content__form__message textarea {
+              height: 304px;
+          }
+      }
+  }
+
+  footer {
+      width: 880px;
+      margin: 27px auto;
+
+      .footer__send {
+          @include size(250px,63px);
+          line-height: 63px;
+          margin: inherit;
+      }
+  }
+}

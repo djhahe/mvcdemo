@@ -1,0 +1,111 @@
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import "variables";
+@import "mixin.scss";
+
+
+html {
+    font-size: $font-size;
+}
+
+body {
+    background-color: $body-bg;
+    color: $text-color;
+    font: {
+        family: $font-family;
+        size: 1.3em;
+    }
+}
+
+button, input, select, textarea {
+    font: {
+        family: inherit;
+        size: inherit;
+    }    
+}
+
+header{
+    text-align: center;
+}
+
+.content{
+    margin: 40px 0;
+    .content__details{
+        .content__details__description{
+            line-height: 2;
+            margin:0 30px 30px 0;
+        }
+    }
+    .content__details__contact{
+        margin-bottom: 30px;
+    }
+    .content__form{
+        input{
+            height: 45px;
+        }
+        textarea{
+            height: 165px;
+        }
+        .content__form__send{
+            background-color: $btn-bg;
+            width: 100%;
+        }
+    }
+}
+
+footer{
+    margin-bottom: 20px;
+}
+
+%icon {
+    display: inline-block;
+    margin-right: .8rem;
+    background: url(img/sprites.png) no-repeat;
+}
+
+.icon-phone {
+    @extend %icon;
+    background-position: -7px -10px;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.icon-email {
+    @extend %icon;
+    background-position: -35px -10px;
+    height: 1rem;
+    width: 1.4rem;
+}
+
+.icon-address {
+    @extend %icon;
+    background-position: -67px -10px;
+    height: 1.2rem;
+    width: .8rem;
+}
+
+@media (min-width: 1024px) {
+    body{
+        margin: 0 50px;
+    }
+    header{
+        margin: 50px auto;
+    }
+
+    .content{
+        .content__form{
+            .content__form--left{
+                padding: 0;
+            }
+            .content__form__send{
+                width: 120px;
+            }
+        }
+    }
+
+    footer{
+        margin: 20px 0;
+    }
+}
+
+
+

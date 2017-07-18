@@ -1,0 +1,10 @@
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\obj\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\DataModel.dll.config
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\DataModel.dll
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\DataModel.pdb
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\EntityFramework.dll
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\EntityFramework.xml
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\obj\Debug\DataModel.dll
+D:\probation-kenny\DemoMVC\DemoMVC\DataModel\obj\Debug\DataModel.pdb

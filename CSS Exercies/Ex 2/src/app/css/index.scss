@@ -1,0 +1,244 @@
+@import "variables";
+@import "mixin.scss";
+
+body {
+    background-color: $body-bg;
+    font: {
+        family: $font-family;
+        size: 16px;
+    }
+    margin: 0;
+}
+
+*, ::before, ::after {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    font: {
+        family: inherit;
+        size: inherit;
+    }    
+}
+
+%button {
+	position: relative;
+	background-color: #64ce83;
+	color: white;
+	text-align: center;
+	font-size: 1.2em;
+	height: 50px;
+	line-height: 50px;
+	display: block;
+	cursor: pointer;
+}
+
+header {
+	margin: 20px;
+	text-align: center;
+
+	img {
+		width: 50%;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+
+		li{
+			  color: $header__text--color;
+			  height: 40px;
+              @include font(line-height 40px font-size 1em font-weight bold);
+			  border: $header__border--color solid thin;
+		}
+	}
+
+	.header__button{
+		@extend %button;
+		background-color: $header__button--bg;
+		border-radius: $border-normal-radius;
+		border: solid $header__button--border;
+		border-width: 0 0 2px 0;
+	}
+}
+
+.content{
+    border-top: solid $header__border--color;
+    background-color: rgb(250,250,250);
+    margin-bottom: 20px;
+    .content__news{
+        margin: 20px;
+        img{
+            width: 100%;
+        }
+
+        .content__news__image--footer{
+            
+            @include font(color #c98715 font-size 11px);
+            .content__news__date{
+                text-align: left;
+            }
+
+            .content__news__des{
+                @include float--right(50%);
+                text-align: right;
+            }
+        }
+
+        .content__news__details{
+            
+            h1{
+                @include font(color $title--color font-size 16px);
+            }
+
+            p{
+                @include font(color #666666 font-size 14px);
+            }
+
+            a{
+                @include font(color $link--color font-size 12px font-weight bold);
+            }
+        }
+    }
+
+    .content__overview{
+        padding:  20px ;
+        border-top: $header__border--color solid 3px;
+        h1{
+            @include font(color $title--color font-size 24px font-weight normal);
+        }
+
+        p{
+            @include font(color #4c4c4c font-size 16px);
+        }
+
+        a{
+            @include font(color $link--color font-size 12px font-weight bold);
+
+            &::after{
+                content:"";
+                display:inline-block;
+                width:15px;
+                height:15px;
+                background:url('img/learnmore.png') no-repeat;
+                background-size: contain;
+                margin:0 0 0 5px;
+            }
+        }
+    }
+}
+
+footer{
+    
+    height: 100px;
+    @include font(color #fff font-size 12px);
+    background-color: $footer__background--color;
+    
+
+    .footer__message{
+        padding: 20px 20px 10px;
+    }
+    .footer__form{
+        margin:0 20px;
+        
+        border-bottom: rgb(0,92,121) solid 2px;
+        input{
+            height: 40px;
+            padding-left: 10px;
+            @include float--left(80%);
+        }
+        a{
+            @extend %button;
+            background-color: #06a7e2;
+            height: 40px;
+            line-height: 40px;
+            width: 20%;
+            display: inline-block;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    body{
+        height: 90%;
+    }
+    header{
+        width: 930px;
+        height: 65px;
+        margin: 20px auto ;
+        padding: 0;
+        img{
+            @include column--left(20%);
+        }
+
+        .header__menu{
+            margin: 0;
+            @include column--center(60%);
+            li{
+                font-size: 14px;
+                margin: 0 10px;
+                display: inline-block;
+                border: none;
+            }
+        }
+
+        a{
+            @include column--right(20%);
+        }
+    }
+
+    .content{
+        height: calc(100vh - 270px);
+        .content__wrapper{
+            width: 930px;
+            margin: 40px auto 0;
+            .content__news{
+                border-bottom: $header__border--color solid 3px;
+                background-color: #fff;
+                @include float--left(310px);
+                .content__news__image--footer{
+                    padding: 0 20px;
+                }
+                .content__news__details{
+                    padding: 20px;
+                }
+            }
+
+            .content__overview{
+                @include float--right(50%);
+                border: none;
+                h1{
+                    margin: 0;
+                }
+            }
+
+            .content__clear{
+                clear: both;
+            }
+        }
+    }
+
+    footer{
+        
+        height: 150px;
+        font-size: 16px;
+
+        .footer__message{
+            margin: 39px 0 0 51px;
+            @include float--left(425px);
+        }
+
+        .footer__form{
+            @include float--right(360px);
+            margin: 50px;
+            input{
+                width: 285px;
+            }
+            a{
+                width: 75px;
+            }
+        }
+    }
+}

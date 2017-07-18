@@ -1,0 +1,37 @@
+@mixin float($float,$width){
+  float: $float;
+  width: $width;
+}
+
+@mixin float--left($width){
+    @include float(left, $width)
+}
+
+@mixin float--right($width){
+    @include float(right, $width)
+}
+
+@mixin font($args) {
+  @each $o in font-size color font-weight line-height {
+        $i: index($args, $o);
+
+    @if $i and $i + 1<= length($args) {
+          #{$o}: nth($args, $i + 1);
+    }
+  }
+}
+
+@mixin column--left($width){
+    float: left;
+    width: $width;
+}
+
+@mixin column--right($width){
+    float: right;
+    width: $width;
+}
+
+@mixin column--center($width){
+    display: inline-block;
+    width: $width;
+}

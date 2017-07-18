@@ -1,0 +1,57 @@
+.button-add{
+    position: relative;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    width: 100px;
+    margin: 15px 0px 0px 0px;;
+    cursor: pointer;
+    border-radius: 5px
+}
+
+.button {
+    position: relative;
+    background-color: #797979;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    width: 100px;
+    margin: 15px 20px 0px 20px;;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-small {
+    position: relative;
+    background-color: #797979;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    width: 35px;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.modalHeader {
+    height: 50px;
+    font-size: 20;
+    background-color: #2e3e4a;
+    color: white;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+.modal-content{
+    padding: 20;
+}

@@ -1,0 +1,60 @@
+
+.title{
+    color: white;
+    font-size: x-large;
+    height: 50px;
+    background:rgb(49,68,83);
+    position: relative;
+    border-bottom: 1px black;
+    border-bottom-style: solid;
+    h1{
+        margin: 0px;
+        font-size: 24px;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+        height: 64px;
+        line-height: 55px;
+    }
+}
+
+.sidebar {
+    background:rgb(49,68,83);
+    height: 100%;
+    position: relative;
+}
+
+.menuItem {
+    margin:0;
+    padding:10px 0px 10px 20px;
+    cursor:pointer;
+    color:#ffffff;
+    font-size: 15;
+    
+    &:hover {
+        background-color:#d43e1b;
+    }
+
+    .DASHBOARDIcon{
+        //background: url(../images/dashboard.svg);
+    }      
+}
+
+.active {
+    color: #d43e1b;
+    &:hover {
+        color:#ffffff;
+    }
+}
+
+.subMenuItem {
+    color:#ffffff;
+    margin: 5px 5px 5px 30px;
+    cursor:pointer;
+    font-size: 13;
+    &:hover {
+        background-color:#d43e1b;
+    }
+}
+.subMenuItem-active {
+    color: #d43e1b;
+}

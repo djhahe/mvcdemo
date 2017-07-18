@@ -1,0 +1,8 @@
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\bin\Debug\LicenseeBusiness.dll
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\bin\Debug\LicenseeBusiness.pdb
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\bin\Debug\DBContext.dll
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\bin\Debug\DBContext.pdb
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\bin\Debug\EntityFramework.xml
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\obj\Debug\LicenseeBusiness.csprojResolveAssemblyReference.cache
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\obj\Debug\LicenseeBusiness.dll
+D:\probation-kenny\DemoMVC\DemoMVC\LicenseeBusiness\obj\Debug\LicenseeBusiness.pdb

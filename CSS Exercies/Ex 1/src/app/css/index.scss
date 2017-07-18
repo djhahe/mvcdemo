@@ -1,0 +1,167 @@
+@import "variables";
+@import "mixin.scss";
+
+html {
+    font-size: $font-size;
+}
+
+body {
+    background-color: $body-bg;
+    color: $text-color;
+    font: {
+        family: $font-family;
+        size: 1.3em;
+    }
+}
+
+*, ::before, ::after {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button, input, select, textarea {
+    font: {
+        family: inherit;
+        size: inherit;
+    }    
+}
+
+header{
+    text-align: center;
+}
+
+.content{
+    margin: 40px 0;
+    .content__details{
+        .content__details__description{
+            line-height: 2;
+            margin:0 30px 10px 0;
+            p{
+                margin: 0;
+            }
+        }
+
+        .content__details__contact{
+            margin-right: 30px;
+            .content__details__contact__phone{
+                @include float--left(120px);
+                margin-right: 10px;
+            }
+            .content__details__contact__email{
+                @include float--left(160px);
+            }
+            .content__details__contact__address{
+                clear: both;
+                line-height: 2;
+            }
+        }
+    }
+
+    .content__form{
+        margin: 0;
+        %input--text{
+            width: 100%;
+            border-width: 0;
+            border-radius: $border-normal-radius;
+            margin: 5px 0;
+            padding-left: 10px;
+            color: $input-color;
+        }
+        input{
+            @extend %input--text;
+            height: 43px;
+        }
+        textarea{
+            @extend %input--text;
+            height: 150px;
+            padding-top: 10px;
+        }
+
+        .content__form__send{
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-weight: bold;
+            text-align: center;
+            background-color: $btn-bg;
+            border-radius: $border-normal-radius;
+            border: solid $btn-border;
+            border-width: 1px 1px 3px;
+        }
+    }
+
+}
+
+%icon {
+    display: inline-block;
+    margin-right: .8rem;
+    background: url(img/sprites.png) no-repeat;
+}
+
+.icon-phone {
+    @extend %icon;
+    background-position: -7px -10px;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.icon-email {
+    @extend %icon;
+    background-position: -35px -10px;
+    height: 1rem;
+    width: 1.4rem;
+}
+
+.icon-address {
+    @extend %icon;
+    background-position: -67px -10px;
+    height: 1.2rem;
+    width: .8rem;
+}
+
+@media (min-width: 1024px) {
+    body{
+        margin: 0 50px;
+    }
+    header{
+        margin: 50px auto;
+    }
+
+    .content{
+        
+        .content__details{
+            margin: 0;
+            @include float--left(50%);
+        }
+
+        .content__form{
+            margin: 0;
+            @include float--right(50%);
+
+            .content__form--left{
+                @include float--left(30%);
+            }
+
+            .content__form--right{
+                @include float--right(68%);
+
+                .content__form__send{
+                    @include float--right(120px);
+                }
+            }
+        }
+        .content__clear{
+            clear: both;
+        }
+    }
+
+    footer{
+        margin: 20px 0;
+    }
+}
+
+
+
