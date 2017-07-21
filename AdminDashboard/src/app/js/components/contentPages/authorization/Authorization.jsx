@@ -2,18 +2,38 @@ import React from 'react';
 import AddUserButton from './AddUserButton.jsx';
 import Content from './Content.jsx';
 import Modal from '../../common/Modal.jsx';
+import UserServices from '../../services/UserServices.jsx';
 import CreateUserForm from './CreateUserForm.jsx';
-
-const items =  [
-  {id: 1, userName: 'Kenny', isActive: true, permissions:[1,2], currencies:[1,2,3] },
-  {id: 2, userName: 'Kenny 1', isActive: true, permissions:[3,4],currencies:[2,3,4]},
-  {id: 3, userName: 'Kenny 1', isActive: true, permissions:[1,2,3,4],currencies:[2]}
-];
 
  class Authorization extends React.Component {
     constructor(props){
         super(props);
-        this.state = { isAddUserOpen: false, items: items };
+        this.state = { 
+            isAddUserOpen: false, 
+            items: [],
+            isLoaded: false 
+        };
+    }
+    
+    componentDidMount(){
+        var component = this;
+         UserServices.GetAllUser().then((response) =>{
+            if(response != undefined){
+                var userList = []; 
+                response.data.map(function(o){
+                    var userInfo = { 
+                        id: o.Id,
+                        userName: o.UserName,
+                        isActive: o.IsActive,
+                        currencies: (o.Currencies).split(","),
+                        permissions: (o.Permissions).split(","),
+                    }
+                    userList.push(userInfo);
+                })
+                component.setState({items : userList, isLoaded : true});
+            }
+         });
+        
     }
 
     handleAddUserButtonClick() {
@@ -33,17 +53,22 @@ const items =  [
     }
 
     addUser(userInfo){
+        var component = this;
         var maxId = Math.max.apply(Math,this.state.items.map(function(o){return o.id;}))
         userInfo.id = ++maxId;
         userInfo.isActive = true;
-
-        items.push(userInfo);
-        this.setState({
-            items: items
-        });
+        
+        UserServices.AddUser(userInfo,(userId)=>{
+            userInfo.id = userId;
+            this.state.items.push(userInfo);
+            this.setState({
+                items: items
+            });
+        })
     }
 
     render(){
+        if(this.state.isLoaded){
         return (
             <div className='content'>
                 <AddUserButton onClick={(e) => this.handleAddUserButtonClick(e)}/>
@@ -55,7 +80,13 @@ const items =  [
                     />
                 </Modal>
             </div>
+            
         );
+        }else{
+            return(
+                <div>Loading</div>
+            )
+        }
     }
 }
 

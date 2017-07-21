@@ -116,7 +116,7 @@ namespace DataModel.GenericRepository
         /// <returns></returns>
         public TEntity Get(Func<TEntity, Boolean> where)
         {
-            return DbSet.Where(where).FirstOrDefault<TEntity>();
+            return DbSet.FirstOrDefault<TEntity>(where);
         }
 
         /// <summary>

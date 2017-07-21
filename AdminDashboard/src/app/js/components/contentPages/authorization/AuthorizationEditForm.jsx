@@ -1,4 +1,5 @@
 import React from 'react';
+import UserServices from '../../services/UserServices.jsx';
 
 const authorizations = [
     {id: 1, name: 'Super Administrator'},
@@ -10,58 +11,80 @@ const authorizations = [
 class AuthorizationEditForm extends React.Component {
     constructor(props){
         super(props);
-
-        this.setState({permissions: this.props.permissions})
+        this.state= {user: '', isLoaded:false};
     } 
 
-    isAuthorized(id) {
-        for(let item of this.props.permissions){
-            if(item == id){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    handlePermissionCheck(id){
-        var permissions = this.state.permissions;
-        var permissionIndex = permissions.findIndex (x => x == id);
-        if(permissionIndex != -1){
-            permissions.splice(permissionIndex,1);
-        } else{
-            permissions.push(id);
-        }
-
-        this.setState({permissions : permissions});
-    }
-
-    handleSubmit(){
-        this.props.handleSubmitAuthorization(this.state.permissions);
+    //=====================================================================================================================
+	// React life cycle functions
+	//=====================================================================================================================
+    componentDidMount(){
+        this.getSelectedUser(this.props.user.id);
     }
 
     render(){
-        return (
-            <div className="modal-content" >
-                {authorizations.map((item) =>
-                    
-                    <div key={item.id}>
-                        <input
-                            name="isActive"
-                            type="checkbox"
-                            checked={(this.props.permissions.findIndex(x => x== item.id) != -1)} 
-                            onChange={(e) => this.handlePermissionCheck(item.id)}/>
-                        {item.name}
+        if(this.state.isLoaded){
+            return (
+                <div className="modal-content" >
+                    {authorizations.map((item) =>
+                        
+                        <div key={item.id}>
+                            <input
+                                name="isActive"
+                                type="checkbox"
+                                checked={(this.state.user.Permissions.findIndex(x => x== item.id) != -1)} 
+                                onChange={(e) => this.handlePermissionCheck(item.id)}/>
+                            {item.name}
+                        </div>
+                    )}
+                    <div className="footer">
+                        <a className='button' onClick={this.props.onClose}>
+                            Cancle
+                        </a>
+                        <p className='button-add' onClick={(e) => this.handleSubmit(e)}>Submit</p>
                     </div>
-                )}
-                <div className="footer">
-                    <a className='button' onClick={this.props.onClose}>
-                        Cancle
-                    </a>
-                    <p className='button-add' onClick={(e) => this.handleSubmit(e)}>Submit</p>
                 </div>
-            </div>
-        );
+            );
+        }else{
+            return(
+                <div>Loading</div>
+            )
+        }
     }
+
+    //=====================================================================================================================
+	// Custom functions
+	//=====================================================================================================================
+    handlePermissionCheck(id){
+        var permissionIndex = this.state.user.Permissions.findIndex (x => x == id);
+        if(permissionIndex != -1){
+            this.state.user.Permissions.splice(permissionIndex,1);
+        } else{
+            this.state.user.Permissions.push(id);
+        }
+
+        this.setState({user : this.state.user});
+    }
+
+    handleSubmit(){
+        var component = this;
+        UserServices.UpdateUser(this.state.user,(response)=>{
+            component.props.handleSubmitAuthorization();
+        });
+    }
+
+    getSelectedUser(id){
+        var component = this;
+         UserServices.GetUser(id).then((response)=>{
+            response.data.Permissions = response.data.Permissions.split(",");
+            response.data.Currencies = response.data.Currencies.split(",");
+            component.setSelectedUser(response.data);
+        })
+    }
+
+    setSelectedUser(user){
+        this.setState({user: user, isLoaded:true});
+    }
+
 }
 
 export default AuthorizationEditForm;

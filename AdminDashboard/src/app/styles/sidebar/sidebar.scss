@@ -1,9 +1,12 @@
 
 .title{
+    
     color: white;
     font-size: x-large;
     height: 50px;
-    background:rgb(49,68,83);
+    background:rgb(49,68,83) url('../img/logo-text.svg')  no-repeat;
+    background-size: 200px 50px;
+    background-position: 20px;
     position: relative;
     border-bottom: 1px black;
     border-bottom-style: solid;

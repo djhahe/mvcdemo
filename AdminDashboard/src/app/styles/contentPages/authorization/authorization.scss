@@ -43,4 +43,24 @@
     .tableBody {
         display: table-row-group;
     }
+    .user{
+        div{
+            input{
+                outline: none;
+                display: block;
+                width: 222px;
+           
+                padding: 7px;
+                border: none;
+                border-bottom: 2px solid #ddd;
+                background: transparent;
+                margin-bottom: 10px;
+                font: 16px Arial, Helvetica, sans-serif;
+                height: 35px;
+                &:focus{
+                    border-bottom: 2px solid ;
+                }
+            }
+        }
+    }
 }

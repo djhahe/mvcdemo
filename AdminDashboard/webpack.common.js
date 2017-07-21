@@ -35,7 +35,7 @@ var config = {
       {
          test: /\.(png|svg|jpg|gif)$/,
          use: [
-           'file-loader'
+           'file-loader?name=[name].[ext]&publicPath=../&outputPath=styles/img/'
          ]
        },
        {

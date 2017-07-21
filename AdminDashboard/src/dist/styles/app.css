@@ -1,18 +1,59 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .container {
-  display: flex;
-  -webkit-box-shadow: -6px -6px 5px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow: -6px -6px 5px rgba(50, 50, 50, 0.75);
-  box-shadow: -6px -6px 5px rgba(50, 50, 50, 0.75);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #eeeff3; }
-
-.leftContent {
-  display: block;
-  width: 25%; }
-
-.rightContent {
-  display: block;
-  width: 75%; }
+  background: url(../styles/img/bg-login.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 100%; }
+  .container .login__form {
+    margin: 0 auto;
+    width: 400px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 200px;
+    border-radius: 3px;
+    padding: 20px 0; }
+    .container .login__form ::before {
+      content: url(../styles/img/logo-text.svg);
+      position: absolute;
+      z-index: 100000;
+      /*a number that's more than the modal box*/
+      left: 0px;
+      top: -35px; }
+    .container .login__form .login__form__username, .container .login__form .login__form__password, .container .login__form .login__form__language {
+      outline: none;
+      display: block;
+      width: 350px;
+      margin: 0 20px;
+      padding: 7px;
+      border: none;
+      border-bottom: 2px solid #ddd;
+      background: transparent;
+      margin-bottom: 10px;
+      font: 16px Arial, Helvetica, sans-serif;
+      height: 35px; }
+      .container .login__form .login__form__username:focus, .container .login__form .login__form__password:focus, .container .login__form .login__form__language:focus {
+        border-bottom: 2px solid; }
+    .container .login__form .login__form__username {
+      display: block; }
+    .container .login__form .login__form__password {
+      display: block; }
+    .container .login__form .login__form__language {
+      width: 250px;
+      display: inline; }
+    .container .login__form .login__form__submit {
+      display: inline-block;
+      background: orange;
+      width: 80px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 3px; }
 .content {
   position: relative;
   margin: 20px; }

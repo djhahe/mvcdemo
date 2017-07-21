@@ -7,15 +7,17 @@ using DataModel.GenericRepository;
 
 namespace DataModel.UnitOfWork
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable, IUnitOfWork
     {
         #region Private member variables...
 
-        private LicenseeEntities _context = null;
+        private readonly LicenseeEntities _context = null;
         private GenericRepository<User> _userRepository;
         private GenericRepository<Currency> _currencyRepository;
         private GenericRepository<Permission> _permissionRepository;
         private GenericRepository<Menu> _menuRepository;
+        private GenericRepository<Token> _tokenRepository;
+
         #endregion
 
         public UnitOfWork()
@@ -28,7 +30,7 @@ namespace DataModel.UnitOfWork
         /// <summary>
         /// Get/Set Property for currency repository.
         /// </summary>
-        public GenericRepository<Currency> ProductRepository
+        public GenericRepository<Currency> CurrencyRepository
         {
             get
             {
@@ -54,7 +56,7 @@ namespace DataModel.UnitOfWork
         /// <summary>
         /// Get/Set Property for menu repository.
         /// </summary>
-        public GenericRepository<Menu> TokenRepository
+        public GenericRepository<Menu> MenuRepository
         {
             get
             {
@@ -74,6 +76,19 @@ namespace DataModel.UnitOfWork
                 if (this._permissionRepository == null)
                     this._permissionRepository = new GenericRepository<Permission>(_context);
                 return _permissionRepository;
+            }
+        }
+
+        /// <summary>
+        /// Get/Set Property for Permission repository.
+        /// </summary>
+        public GenericRepository<Token> TokenRepository
+        {
+            get
+            {
+                if (this._tokenRepository == null)
+                    this._tokenRepository = new GenericRepository<Token>(_context);
+                return _tokenRepository;
             }
         }
         #endregion
@@ -104,7 +119,7 @@ namespace DataModel.UnitOfWork
                 }
                 System.IO.File.AppendAllLines(@"C:\errors.txt", outputLines);
 
-                throw e;
+                throw;
             }
 
         }

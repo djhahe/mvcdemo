@@ -33,7 +33,7 @@ class MenuBar extends React.Component {
         return (
             <div className="leftContent">
                 <div className="title">
-                    <h1>LICENSEE ADMIN</h1>
+                    
                 </div>
                 <div className="sidebar">
                     {this.props.items.map((item,i) =>

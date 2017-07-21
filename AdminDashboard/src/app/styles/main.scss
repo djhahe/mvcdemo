@@ -1,10 +1,13 @@
+@import './common/_resetcss.scss';
+
 .container{
     display: flex;
     -webkit-box-shadow: -6px -6px 5px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    -6px -6px 5px rgba(50, 50, 50, 0.75);
     box-shadow:         -6px -6px 5px rgba(50, 50, 50, 0.75);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(238, 239, 243)
+    background-color: rgb(238, 239, 243);
+    margin : 0;
 }
 
 .leftContent{

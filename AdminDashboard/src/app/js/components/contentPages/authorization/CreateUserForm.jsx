@@ -40,7 +40,7 @@ class CreateUserForm extends React.Component {
     
     render(){
         return (
-            <div className="modal-content" >
+            <div className="modal-content user" >
                 <div>
                     <div>Login Username</div>
                     <input value={this.state.userName} onChange={(e) => this.handleUserNameChange(e)} type='text'/>

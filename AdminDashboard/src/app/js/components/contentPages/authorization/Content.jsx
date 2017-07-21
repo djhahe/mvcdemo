@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from '../../common/Modal.jsx';
 import AuthorizationEditForm from './AuthorizationEditForm.jsx';
 import CurrencyEditForm from './CurrencyEditForm.jsx';
+import UserServices from '../../services/UserServices.jsx';
 import '../../../../styles/contentPages/authorization/authorization.scss';
 
 class Content extends React.Component {
@@ -14,7 +15,7 @@ class Content extends React.Component {
             userList : this.props.items
         };
     }
-
+  
     handleCloseAuthorizationPopup(){
         this.setAuthorizationPopupOpenState();
     }
@@ -30,16 +31,8 @@ class Content extends React.Component {
         });
     }
 
-    handleSubmitAuthorization(permissions){
-        this.setPermissions(permissions);
+    handleSubmitAuthorization(){
         this.setAuthorizationPopupOpenState();
-    }
-
-    setPermissions(permissions){
-        let userList = this.state.userList;
-        let userIndex = userList.findIndex(user => user.id == this.state.selectedUser.id);
-        userList[userIndex].permissions = permissions;
-        this.setState({userList : userList});
     }
 
     setSelectedUser(user){
@@ -63,17 +56,13 @@ class Content extends React.Component {
         });
     }
 
-    handleSubmitCurrencies(currencies){
-        this.setCurrencies(currencies);
+    handleSubmitCurrencies(){
         this.setCurrencyPopupOpenState();
     }
 
-    setCurrencies(currencies){
-        let userList = this.state.userList;
-        let userIndex = userList.findIndex(user => user.id == this.state.selectedUser.id);
-        userList[userIndex].currencies = currencies;
-        this.setState({userList : userList});
-    }
+
+
+    
 
     render(){
         var component = this;
@@ -110,7 +99,7 @@ class Content extends React.Component {
                 </div>
                 <Modal show={this.state.isAuthorizationPopupOpen} header="AUTHORIZATION" >
                     <AuthorizationEditForm
-                        permissions={this.state.selectedUser.permissions} 
+                        user={this.state.selectedUser}
                         onClose={(e) => this.handleCloseAuthorizationPopup(e)}
                         handleSubmitAuthorization={(e) =>this.handleSubmitAuthorization(e)}
                     />
@@ -118,7 +107,7 @@ class Content extends React.Component {
 
                 <Modal show={this.state.isCurrencyPopupOpen} header="CURRENCY" >
                     <CurrencyEditForm 
-                        currencies={this.state.selectedUser.currencies}
+                        user={this.state.selectedUser}
                         onClose={(e) => this.handleCloseCurrencyPopup(e)}
                         handleSubmitCurrencies={(e) =>this.handleSubmitCurrencies(e)}
                     />

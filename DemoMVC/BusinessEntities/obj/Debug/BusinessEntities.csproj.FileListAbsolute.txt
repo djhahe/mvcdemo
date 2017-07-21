@@ -1,0 +1,10 @@
+D:\probation-kenny\DemoMVC\DemoMVC\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\probation-kenny\DemoMVC\DemoMVC\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\probation-kenny\DemoMVC\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\probation-kenny\DemoMVC\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\probation-kenny\DemoMVC\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.pdb
+D:\probation-kenny\DemoMVC\BusinessEntities\bin\Debug\BusinessEntities.dll
+D:\probation-kenny\DemoMVC\BusinessEntities\bin\Debug\BusinessEntities.pdb
+D:\probation-kenny\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.csprojResolveAssemblyReference.cache
+D:\probation-kenny\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.dll
+D:\probation-kenny\DemoMVC\BusinessEntities\obj\Debug\BusinessEntities.pdb
